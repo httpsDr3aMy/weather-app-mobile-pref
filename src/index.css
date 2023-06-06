@@ -1,0 +1,376 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+html {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.App {
+  position: relative;
+  background: radial-gradient(#242672, #191a4e);
+  width: 350px;
+  height: 600px;
+  border-radius: 48px;
+  overflow: hidden;
+}
+.show{
+  display: block;
+}
+.hide{
+  display: none;
+}
+.settings-view {
+  position: absolute;
+  left: 0%;
+  top: -100%;
+  width: 350px;
+  height: 600px;
+  background: linear-gradient(to bottom right, #101039, #101039, #101039, #101039, #101039);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#change-city,
+#change-unit {
+  margin-bottom: 20px;
+}
+
+#change-city:focus {
+  outline: 0;
+}
+
+.bar {
+  white-space: nowrap;
+}
+
+.row.day {
+  display: flex;
+}
+
+.simplebar-scrollbar {
+  color: #888; /* kolor samego paska przewijania */
+}
+
+.charts-title {
+  font-size: bold;
+  color: white;
+  margin: 10px 30px;
+}
+
+#submit-new-values {
+  padding: 10px 40px;
+  background-color: #ffd059;
+  border-radius: 15px;
+  border: 0;
+}
+.swipper-wrapper{
+  display: flex;
+  flex-direction: row;
+}
+.settings-view.ejecting {
+  animation: settings-ejecting 0.5s forwards;
+}
+
+.settings-view.removed-ejecting {
+  animation: settings-ejecting-removed 0.5s forwards;
+}
+
+.welcome-page {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 350px;
+  height: 600px;
+  background: radial-gradient(#242672, #101039);
+}
+
+.main-view {
+  display: block;
+  width: 350px;
+  height: 600px;
+  position: absolute;
+  left: 100%;
+  background: linear-gradient(to bottom right, #101039, #101039, #101039, #101039, #101039);
+}
+
+.fa-sliders {
+  float: left;
+  font-size: larger;
+  position: absolute;
+  top: 20px;
+  left: 40px;
+}
+
+.sun {
+  height: 60px;
+}
+.weather-icon-image{
+  display: flex;
+  justify-content: right;
+}
+.weather-icon{
+  width: 50px;
+  margin: 10px;
+  margin-bottom: 5px;
+}
+.temperature-wi{
+  font-size: 18px;
+  position: relative;
+}
+.temperature-number{
+  font-size: 24px;
+  font-weight: 600;
+}
+.unit-tempereture{
+  position: absolute;
+  top: 2px;
+  margin-left: 5px;
+  color: #ffd059;
+}
+.hour-wi{
+  font-size: smaller;
+}
+.weather-icon-info{
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 10px;
+}
+.weather-of-the-day {
+  display: flex;
+  flex-direction: row;
+  margin-top: 10px;
+}
+
+.hour-day-box {
+  width: 120px;
+  height: 120px;
+  background-color: #1a1c49;
+  border-radius: 15px;
+  color: white;
+  margin: 10px 5px;
+}
+.hour-day-box:first-child{
+  margin-left: 35px;
+}
+
+.row.day {
+  display: flex;
+  flex-direction: row;
+}
+
+.bar {
+  white-space: nowrap;
+}
+
+.row-day {
+  display: flex;
+}
+
+
+.row:first-child {
+  color: white;
+  display: block;
+  height: 50px;
+}
+
+.fa-solid.fa-xmark {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  cursor: pointer;
+  font-size: 200%;
+  padding: 20px;
+  color: white;
+}
+
+.today-box {
+  display: block;
+  background-color: #1a1c49;
+  border-radius: 12px;
+  width: 80%;
+  height: 150px;
+  margin: 0 auto;
+  margin-top: 20px;
+  padding: 20px;
+}
+.today-box #current-day,
+.today-box h4 {
+  color: white;
+}
+.today-box .row:nth-child(1) {
+  display: flex;
+  justify-content: space-between;
+  height: auto;
+}
+.today-box .row:nth-child(2) {
+  margin: 10px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+.today-box .row:nth-child(2) .temperature {
+  position: relative;
+}
+.today-box .row:nth-child(2) #temperature {
+  font-size: 300%;
+  font-weight: bolder;
+}
+.today-box .row:nth-child(2) #scale-of-temperature {
+  position: absolute;
+  top: 10px;
+  margin-left: 5px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 150%;
+  color: #ffd059;
+}
+.today-box .row:nth-child(3) {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  color: white;
+}
+.today-box .row:nth-child(3) #location {
+  margin-left: 10px;
+}
+.today-box .row:nth-child(3) .fa-location-dot {
+  color: #ffd059;
+}
+
+h5 {
+  font-size: small;
+  font-weight: 200;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  letter-spacing: 1px;
+}
+
+.choose-day-row {
+  display: flex;
+  flex-direction: row;
+  color: white;
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+}
+.choose-day-row button {
+  border: 0;
+  color: white;
+  background: transparent;
+  font-size: smaller;
+  margin: 0 15px;
+}
+.choose-day-row .selected-day {
+  color: #ffd059;
+}
+.choose-day-row button:hover {
+  cursor: pointer;
+}
+.choose-day-row button:first-child {
+  margin-left: 0px;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+}
+
+.yellow-h1 {
+  color: #ffd059;
+}
+
+.description {
+  text-align: center;
+  margin: 20px 25px;
+  color: white;
+}
+
+
+#get-start-btn {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  display: block;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  background-color: #ffd059;
+  border: 0;
+  border-radius: 12px;
+  padding: 15px 40px;
+  width: 200px;
+  overflow: hidden;
+}
+
+.main-icon {
+  width: 200px;
+  height: 200px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 70px;
+  margin-bottom: 50px;
+}
+
+.main-view.animation-of-ejecting {
+  display: block;
+  animation: animation-of-ejecting 0.5s forwards;
+}
+
+@keyframes animation-of-ejecting {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0%;
+  }
+}
+@keyframes settings-ejecting {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 0%;
+  }
+}
+@keyframes settings-ejecting-removed {
+  from {
+    top: 0;
+  }
+  to {
+    top: -100%;
+  }
+}
+@media (max-width: 430px) {
+  .App,
+  .welcome-page,
+  .main-view {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 0;
+  }
+  .settings-view {
+    height: 100vh;
+    width: 100vw;
+  }
+  .welcome-page {
+    padding: 10px;
+  }
+}
